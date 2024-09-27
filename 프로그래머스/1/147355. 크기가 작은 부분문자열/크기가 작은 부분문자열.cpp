@@ -11,7 +11,7 @@ int solution(string t, string p) {
     
     for(int i{}; i <= t_size - p_size; i++)
     {
-        if(stol(t.substr(i,p_size)) <= stol(p)) answer++;
+        if(stoll(t.substr(i,p_size)) <= stoll(p)) answer++;
     }
     
     return answer;
