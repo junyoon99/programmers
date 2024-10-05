@@ -28,30 +28,6 @@ void LowestCost(unordered_map<int, vector<pair<int, int>>>& roads, const int& n,
 	}
 }
 
-int LowestCost(unordered_map<int, vector<pair<int, int>>>& roads, const int& n, const int& s, const int& goal)
-{
-	vector<int> Price(n + 1, INT_MAX);
-	priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-	pq.push({ 0, s });
-	Price[s] = 0;
-
-	while (!pq.empty())
-	{
-		pair<int, int> here = pq.top();
-		pq.pop();
-
-		for (auto e : roads[here.second])
-		{
-			if (Price[e.second] > Price[here.second] + e.first)
-			{
-				Price[e.second] = Price[here.second] + e.first;
-				pq.push({ Price[e.second], e.second });
-			}
-		}
-	}
-	return Price[goal];
-}
-
 int solution(int n, int s, int a, int b, vector<vector<int>> fares) {
 
 	int answer = INT_MAX;
