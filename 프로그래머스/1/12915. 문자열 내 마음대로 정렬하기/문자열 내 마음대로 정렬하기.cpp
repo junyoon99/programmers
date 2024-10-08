@@ -11,10 +11,7 @@ vector<string> solution(vector<string> strings, int n) {
         if(a[n] == b[n])
         {
            int s{};
-            while(a[s] == b[s])
-            {
-                s++;
-            }
+            while(a[s] == b[s]) s++;
             return a[s] < b[s];
         }
         return a[n] < b[n];
