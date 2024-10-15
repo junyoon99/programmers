@@ -10,10 +10,9 @@ vector<string> solution(int n, vector<int> arr1, vector<int> arr2) {
         int temp{ arr1[i] | arr2[i] };
         for (int j{}; j < n; j++) 
         {
-            answer[i][n-1-j] = (temp % 2 + '0' == '1') ? '#' : ' ';
+            answer[i][n-1-j] = temp % 2 == 1 ? '#' : ' ';
             temp /= 2;
         }
     }
-
     return answer;
 }
