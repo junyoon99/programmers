@@ -10,13 +10,16 @@ int solution(int n) {
     
     for(int i{2}; i < vec.size(); i++)
     {
-        int j{1};
-        if(vec[i]) answer++;
-        while(i*j < vec.size())
+        if(vec[i])
         {
-            vec[i*j] = false;
-            j++;
-        }
+            int j{1};
+            answer++;
+            while(i*j < vec.size())
+            {
+                vec[i*j] = false;
+                j++;
+            }  
+        } 
     }
     return answer;
 }
