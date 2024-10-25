@@ -6,21 +6,17 @@ using namespace std;
 int solution(int n) {
     int answer = 0;
     
-    vector<int> vec(n+1,0);
+    vector<bool> vec(n+1,true);
     
     for(int i{2}; i < vec.size(); i++)
     {
         int j{1};
+        if(vec[i]) answer++;
         while(i*j < vec.size())
         {
-            vec[i*j]++;
+            vec[i*j] = false;
             j++;
         }
     }
-    for(auto e : vec)
-    {
-        if(e == 1) answer++;
-    }
-    
     return answer;
 }
